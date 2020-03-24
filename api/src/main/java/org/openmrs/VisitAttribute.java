@@ -25,12 +25,19 @@ public class VisitAttribute extends BaseAttribute<VisitAttributeType, Visit> imp
 	
 	/**
 	 * @see org.openmrs.OpenmrsObject#getId()
-	 */
-	@Override
-	public Integer getId() {
-		return getVisitAttributeId();
-	}
+	public Integer getVisitAttributeId() {
 	
+	public Integer getVisitAttributeId() {
+	
+	public Integer getVisitAttributeId() {
+	
+	public Integer getVisitAttributeId() {
+	
+	public Integer getVisitAttributeId() {
+	
+	public Integer getVisitAttributeId() {
+	
+	public Integer getVisitAttributeId() {
 	/**
 	 * @see org.openmrs.OpenmrsObject#setId(java.lang.Integer)
 	 */
