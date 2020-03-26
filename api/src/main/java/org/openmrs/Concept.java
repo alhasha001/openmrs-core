@@ -900,7 +900,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 	 * @should return the shortest name for the concept from any locale if exact is false
 	 * @should return null if there are no names in the specified locale and exact is true
 	 */
-	public ConceptName getShortestName(Locale locale, Boolean exact) {
+	public ConceptName getShortestName(Locale locale, Boolean exact) throws NullPointerException{
 		if (log.isDebugEnabled()) {
 			log.debug("Getting shortest conceptName for locale: " + locale);
 		}
@@ -928,9 +928,9 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 		}
 		
 		if (exact) {
+
 			if (shortestNameForLocale == null) {
-				log.warn("No short concept name found for concept id " + conceptId + " for locale "
-				        + locale.getDisplayName());
+				throw new NullPointerException("No short concept name found for concept id " + conceptId + " for locale.");
 			}
 			return shortestNameForLocale;
 		}
