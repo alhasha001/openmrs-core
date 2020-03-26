@@ -409,6 +409,11 @@ public class Daemon {
 		public Exception getExceptionThrown() {
 			return exceptionThrown;
 		}
+
+		@Override
+		public void run() {
+			super.run();
+		}
 	}
 	
 	/**
