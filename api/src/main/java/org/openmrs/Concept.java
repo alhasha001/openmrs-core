@@ -651,10 +651,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 			log.debug("Getting preferred conceptName for locale: " + forLocale);
 		}
 		// fail early if this concept has no names defined
-		if (getNames(forLocale).isEmpty()) {
-			if (log.isDebugEnabled()) {
-				log.debug("there are no names defined for concept with id: " + conceptId + " in the  locale: " + forLocale);
-			}
+		if (getNames(forLocale).isEmpty() && log.isDebugEnabled()) {
 			return null;
 		} else if (forLocale == null) {
 			log.warn("Locale cannot be null");
@@ -1045,7 +1042,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 			}
 		}
 	}
-	
+ 
 	/**
 	 * Remove the given name from the list of names for this Concept
 	 * 
