@@ -67,7 +67,9 @@ import org.springframework.util.ObjectUtils;
  * @see ConceptSet
  * @see ConceptMap
  * @see ConceptService
+ * 
  */
+
 @FullTextFilterDefs( { @FullTextFilterDef(name = "termsFilterFactory", impl = TermsFilterFactory.class) })
 public class Concept extends BaseOpenmrsObject implements Auditable, Retireable, Serializable, Attributable<Concept>,Customizable<ConceptAttribute> {
 	
@@ -164,6 +166,16 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 		return answers;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		return super.equals(obj);
+	}
+
+
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
 	/**
 	 * If <code>includeRetired</code> is true, then the returned object is the actual stored list of
 	 * {@link ConceptAnswer}s
@@ -449,7 +461,7 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 	public ConceptName getName() {
 		if (getNames().isEmpty()) {
 			if (log.isDebugEnabled()) {
-				log.debug("there are no names defined for: " + conceptId);
+				log.debug(String.format("There are no names defined for: %d", conceptId));
 			}
 			return null;
 		}
@@ -592,13 +604,13 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 		// fail early if this concept has no names defined
 		if (getNames().isEmpty()) {
 			if (log.isDebugEnabled()) {
-				log.debug("there are no names defined for: " + conceptId);
+				log.debug(String.format("There are no names defined for: %d", conceptId));
 			}
 			return null;
 		}
 		
 		if (log.isDebugEnabled()) {
-			log.debug("Getting conceptName for locale: " + locale);
+			log.debug(String.format("Getting conceptName for locale:: %s", locale));
 		}
 		
 		ConceptName exactName = getNameInLocale(locale);
@@ -1486,9 +1498,9 @@ public class Concept extends BaseOpenmrsObject implements Auditable, Retireable,
 	public Set<Locale> getAllConceptNameLocales() {
 		if (getNames().isEmpty()) {
 			if (log.isDebugEnabled()) {
-				log.debug("The Concept with id: " + conceptId + " has no names");
+				log.debug(String.format("The Concept with id: %d has no names", conceptId));
 			}
-			return null;
+			return Collections.emptySet();
 		}
 		
 		Set<Locale> locales = new HashSet<>();

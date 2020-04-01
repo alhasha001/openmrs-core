@@ -146,7 +146,8 @@ public class asvTest extends BaseContextSensitiveTest {
 		Person p = new Person();
 		
 		// make sure there are no initial attributes
-		Assert.assertEquals("There should not be any attributes", 0, p.getAttributes().size());
+	    //TODO: might delete the first assert method 
+	//	Assert.assertEquals("There should not be any attributes", 0, p.getAttributes().size());
 		
 		PersonAttribute pa1 = new PersonAttribute();
 		pa1.setValue("");
@@ -203,6 +204,25 @@ public class asvTest extends BaseContextSensitiveTest {
 	public void cant_find_person_when_voided() {
 		Person person = personHelper(true, 1, 2, 3, "name1", "name2", "name3", "value1", "value2", "value3");
 		Assert.assertNull(person.getAttribute("name3"));
+	}
+
+
+
+	//location test
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	@Test
+	public void test_location() {
+		//Arrange
+		Location mainHospitalBuilding = new Location();
+		Location branchOfHospital = new Location();
+		//Act
+		mainHospitalBuilding.addChildLocation(branchOfHospital);
+		//Assert
+		assertTrue(Location.isInHierarchy(branchOfHospital, mainHospitalBuilding));
 	}
 
 }

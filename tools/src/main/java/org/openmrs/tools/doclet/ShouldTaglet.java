@@ -17,7 +17,6 @@ import com.sun.tools.doclets.Taglet;
 /**
  * Taglet for @should annotations.
  */
-//public class ShouldTaglet implements Taglet {
 public class ShouldTaglet {
 	private static final String NAME = "should";
 	
