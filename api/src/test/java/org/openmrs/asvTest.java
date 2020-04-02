@@ -26,13 +26,6 @@ import org.junit.Before;
  */
 public class asvTest extends BaseContextSensitiveTest {
 
-	/**
-	 * Active Patient's State Test
-	 */
-	
-	/**
-	 * inActive Patient's State Test
-	 */
     //Arrange
 	//patient's date info
 	private Date start;
@@ -48,7 +41,9 @@ public class asvTest extends BaseContextSensitiveTest {
 		exceeded = new Date(end.getTime() + 3121212);
 	}
 
-	
+	/**
+	 * Active Patient's State Test
+	 */
 	@Test
 	public void activePatient() {
 		PatientState state = new PatientState();
@@ -61,7 +56,9 @@ public class asvTest extends BaseContextSensitiveTest {
 		Assert.assertTrue(isActive);
 	}
 
-
+     /**
+	 * inActive Patient's State Test
+	 */
 	@Test
 	public void inActivePatient() {
 		//given
