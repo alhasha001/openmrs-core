@@ -112,8 +112,6 @@ public class asvTest extends BaseContextSensitiveTest {
 		assertTrue("The person object should be empty", p.getNames().size() == 0);
 	}
 	
-
-
 	/**
 	 * Not saving empty patient's info Test
 	 */
