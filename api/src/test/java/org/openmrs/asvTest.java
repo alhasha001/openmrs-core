@@ -92,7 +92,6 @@ public class asvTest extends BaseContextSensitiveTest {
 		        .getNames().size() == 1);
     }
     
-
     /**
 	 * Test removing names
 	 * 
@@ -109,7 +108,6 @@ public class asvTest extends BaseContextSensitiveTest {
 		pN.setVoided(false);
 		p.addName(pN);
 		//Assert
-		// test removing the name
 		p.removeName(pN);
 		assertTrue("The person object should be empty", p.getNames().size() == 0);
 	}
