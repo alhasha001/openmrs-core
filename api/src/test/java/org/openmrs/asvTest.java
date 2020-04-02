@@ -194,5 +194,4 @@ public class asvTest extends BaseContextSensitiveTest {
 		//Assert
 		assertTrue(Location.isInHierarchy(branchOfHospital, mainHospitalBuilding));
 	}
-
 }
