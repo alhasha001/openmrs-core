@@ -32,7 +32,6 @@ public class asvTest extends BaseContextSensitiveTest {
 	private Date now;
 	private Date end;
 	private Date exceeded;
-
 	@Before
 	public void before() {
 		now = new Date();
@@ -132,29 +131,25 @@ public class asvTest extends BaseContextSensitiveTest {
 		p.addAttribute(pA);
 		// ensure that nothing was added
 		//Assert
-		Assert.assertEquals("There should not be any attributes", 0, p.getAttributes().size());
+		Assert.assertEquals("Must be Zero", 0, p.getAttributes().size());
 	}
 
 
     // Arrange
 	private Person personConstructor(boolean isVoided, int t1, int t2, int t3, String name1, String name2, String name3, String att1, String att2, String att3) {
 		Person person = new Person();
-
 	 	PersonAttributeType type1 = new PersonAttributeType(t1);
 	 	PersonAttributeType type2 = new PersonAttributeType(t2);
 	 	PersonAttributeType type3 = new PersonAttributeType(t3);
-	    
 	 	type1.setName(name1);
 	 	type2.setName(name2);
 	 	type3.setName(name3);
 	 	PersonAttribute attribute1 = new PersonAttribute(type1, att1);
 	 	PersonAttribute attribute2 = new PersonAttribute(type2, att2);
 	 	PersonAttribute attribute3 = new PersonAttribute(type3, att3);
-	    
 		 attribute1.setVoided(isVoided);
 		 attribute2.setVoided(isVoided);
 		 attribute3.setVoided(isVoided);
-
 		person.addAttribute(attribute1);
 		person.addAttribute(attribute2);
 		person.addAttribute(attribute3);
